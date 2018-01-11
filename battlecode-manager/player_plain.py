@@ -32,7 +32,7 @@ class PlainPlayer(AbstractPlayer):
         # TODO: windows chec
         args = ['sh', os.path.join(self.working_dir, 'run.sh')]
         env = {'PLAYER_KEY': str(self.player_key), 'RUST_BACKTRACE': '1',
-               'BC_PLATFORM': self._detect_platform()}
+               'BC_PLATFORM': self._detect_platform(), 'PATH': os.environ['PATH']}
 
         if isinstance(self.socket_file, tuple):
             # tcp port
